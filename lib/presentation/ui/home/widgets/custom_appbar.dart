@@ -5,23 +5,29 @@ import '../../../widgets/button_widget.dart';
 import '../../../widgets/text_widget.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar(
+      {super.key, required this.title, this.icon, this.onTap, this.color});
+  final String title;
+  final IconData? icon;
+  final void Function()? onTap;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         TextWidget(
-          "Notes",
+          title,
           color: AppColors.black,
           fontSize: 24,
         ),
         const Spacer(),
         ButtonWidget(
-            buttonColor: AppColors.search_Color,
+            onTap: onTap,
+            buttonColor: color!,
             width: 50,
             child: Icon(
-              Icons.search,
+              icon,
               color: AppColors.black,
             )),
       ],

@@ -34,7 +34,11 @@ class Home extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const CustomAppBar(),
+            CustomAppBar(
+              title: "Notes",
+              color: AppColors.search_Color,
+              icon: Icons.search,
+            ),
             30.ph,
             const Expanded(child: ListItem()),
           ],
