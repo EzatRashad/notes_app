@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_hive/core/themes/colors.dart';
 
 class CustomTextFiled extends StatelessWidget {
-  const CustomTextFiled({super.key, required this.hintT,  this.maxLines=1});
+  const CustomTextFiled({super.key, required this.hintT, this.maxLines = 1});
   final String hintT;
   final int maxLines;
 
@@ -24,6 +24,6 @@ class CustomTextFiled extends StatelessWidget {
 
 OutlineInputBorder border([color]) {
   return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(20),
       borderSide: BorderSide(color: color ?? AppColors.white));
 }
