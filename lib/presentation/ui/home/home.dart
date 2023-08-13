@@ -4,7 +4,6 @@ import 'package:notes_hive/core/utiles/utiles.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/bottomSheet_body.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/custom_appbar.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/listview_item.dart';
-import 'package:notes_hive/presentation/ui/home/widgets/note_item.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -22,7 +21,7 @@ class Home extends StatelessWidget {
             showDragHandle: true,
             context: context,
             builder: (BuildContext context) {
-              return const BottomSheetBody();
+              return  BottomSheetBody();
             },
           );
         },

@@ -41,7 +41,7 @@ class Item extends StatelessWidget {
                   color: AppColors.grey,
                   fontWeight: FontWeight.w400,
                   height: 2,
-                  maxLines: 3,
+                  maxLines: 2,
                 ),
               ),
               trailing: ButtonWidget(

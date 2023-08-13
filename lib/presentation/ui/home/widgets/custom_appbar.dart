@@ -18,6 +18,7 @@ class CustomAppBar extends StatelessWidget {
       children: [
         TextWidget(
           title,
+          fontFamily: 'Caprasimo',
           color: AppColors.black,
           fontSize: 24,
         ),

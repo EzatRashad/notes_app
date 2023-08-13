@@ -24,11 +24,11 @@ class EditNote extends StatelessWidget {
                 color: Colors.transparent,
               ),
               10.ph,
-              const CustomTextFiled(
+               CustomTextFiled(
                 hintT: 'Note Title',
               ),
               40.ph,
-              const CustomTextFiled(
+               CustomTextFiled(
                 hintT: 'Note content',
                 maxLines: 5,
               ),

@@ -32,7 +32,7 @@ class TextWidget extends StatelessWidget {
       maxLines: maxLines,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontFamily: 'poppins',
+        fontFamily: fontFamily??'poppins',
         fontSize: fontSize ?? 16,
         fontWeight: fontWeight,
         decoration: isOffer ? TextDecoration.underline : null,
