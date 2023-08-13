@@ -3,10 +3,12 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:notes_hive/presentation/ui/home/home.dart';
 
 import 'core/utiles/utiles.dart';
+import 'models/note_model.dart';
 
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(Utils.kVoteBox);
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(const MyApp());
 }
 
