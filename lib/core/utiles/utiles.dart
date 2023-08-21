@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Utils {
   static const ThemeMode appMode = ThemeMode.light;
-  static const   kVoteBox = 'notes_box';
+  static const kNoteBox = 'notes_box';
 }
 
 extension EmptyPadding on num {

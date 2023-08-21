@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_hive/presentation/ui/home/home.dart';
 
 import 'core/utiles/utiles.dart';
+import 'cubits/BlocObserver.dart';
 import 'models/note_model.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
   await Hive.initFlutter();
-  await Hive.openBox(Utils.kVoteBox);
   Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(Utils.kNoteBox);
+  
   runApp(const MyApp());
 }
 
