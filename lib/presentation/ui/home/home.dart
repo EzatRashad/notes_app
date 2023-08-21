@@ -2,18 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_hive/core/themes/colors.dart';
 import 'package:notes_hive/core/utiles/utiles.dart';
-import 'package:notes_hive/cubits/cubit/notes_cubit.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/bottomSheet_body.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/custom_appbar.dart';
 import 'package:notes_hive/presentation/ui/home/widgets/listview_item.dart';
 
-class Home extends StatelessWidget {
+import '../../../cubits/cubit/notes_cubit.dart';
+
+class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) => NotesCubit()..fetchNotes(),
       child: Scaffold(
         backgroundColor: AppColors.backG,
         floatingActionButton: FloatingActionButton(
