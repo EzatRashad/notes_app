@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notes_hive/core/themes/colors.dart';
-import 'package:notes_hive/core/utiles/utiles.dart';
 import 'package:notes_hive/models/note_model.dart';
 import 'package:notes_hive/presentation/ui/Edit_note/edit_note.dart';
 import 'package:notes_hive/presentation/widgets/button_widget.dart';
@@ -12,17 +11,17 @@ class Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => EditNote(),
+            builder: (context) => const EditNote(),
           ),
         );
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 24),
+        padding: const EdgeInsets.symmetric(vertical: 24),
         width: double.infinity,
         decoration: BoxDecoration(
             color: AppColors.white, borderRadius: BorderRadius.circular(20)),
@@ -47,6 +46,9 @@ class Item extends StatelessWidget {
                 ),
               ),
               trailing: ButtonWidget(
+                onTap: () {
+                  note.delete();
+                },
                 child: Icon(
                   Icons.delete,
                   color: AppColors.red,

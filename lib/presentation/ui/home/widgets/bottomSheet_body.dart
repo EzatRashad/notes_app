@@ -87,7 +87,7 @@ class _BottomSheetBodyState extends State<BottomSheetBody> {
                           onTap: () {
                             if (formkey.currentState!.validate()) {
                               formkey.currentState!.save();
-                              
+
                               var note = NoteModel(
                                 date: DateFormat.yMd().format(DateTime.now()),
                                 title: title!,
@@ -111,4 +111,5 @@ class _BottomSheetBodyState extends State<BottomSheetBody> {
       ),
     );
   }
+  
 }
