@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_hive/core/utiles/utiles.dart';
 import 'package:notes_hive/models/note_model.dart';
@@ -86,9 +87,9 @@ class _BottomSheetBodyState extends State<BottomSheetBody> {
                           onTap: () {
                             if (formkey.currentState!.validate()) {
                               formkey.currentState!.save();
-
+                              
                               var note = NoteModel(
-                                date: DateTime.now().toString(),
+                                date: DateFormat.yMd().format(DateTime.now()),
                                 title: title!,
                                 subtitle: subtitle!,
                               );
