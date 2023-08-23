@@ -17,13 +17,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
-  
-
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit()..fetchNotes(),
-      child: Scaffold(
+    return BlocBuilder<NotesCubit, NotesState>(
+      builder: (context, state) => Scaffold(
         backgroundColor: AppColors.backG,
         floatingActionButton: FloatingActionButton(
           onPressed: () {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_hive/core/themes/colors.dart';
+import 'package:notes_hive/cubits/cubit/notes_cubit.dart';
 import 'package:notes_hive/models/note_model.dart';
 import 'package:notes_hive/presentation/ui/Edit_note/edit_note.dart';
 import 'package:notes_hive/presentation/widgets/button_widget.dart';
@@ -16,7 +18,7 @@ class Item extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EditNote(),
+            builder: (context) =>  EditNote(note: note,),
           ),
         );
       },
@@ -48,6 +50,7 @@ class Item extends StatelessWidget {
               trailing: ButtonWidget(
                 onTap: () {
                   note.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchNotes();
                 },
                 child: Icon(
                   Icons.delete,

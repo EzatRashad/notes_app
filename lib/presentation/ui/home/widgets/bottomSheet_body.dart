@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/themes/colors.dart';
 import '../../../../cubits/add_note/add_note_cubit.dart';
+import '../../../../cubits/cubit/notes_cubit.dart';
 import '../../../widgets/text_form_filed.dart';
 
 class BottomSheetBody extends StatefulWidget {
@@ -29,6 +30,8 @@ class _BottomSheetBodyState extends State<BottomSheetBody> {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteSuccess) {
+            BlocProvider.of<NotesCubit>(context).fetchNotes();
+
             Navigator.pop(context);
           }
           if (state is AddNoteError) {
@@ -111,5 +114,4 @@ class _BottomSheetBodyState extends State<BottomSheetBody> {
       ),
     );
   }
-  
 }
